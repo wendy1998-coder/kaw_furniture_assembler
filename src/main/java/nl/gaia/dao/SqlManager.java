@@ -1,19 +1,17 @@
 package nl.gaia.dao;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
+import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import static nl.gaia.dao.DatabaseConnectable.cleanUp;
 
@@ -25,16 +23,23 @@ public interface SqlManager {
      * @throws DatabaseException, when connection cannot be made.
      */
     default Connection getConnection() throws Exception {
+        InputStream propertiesStream = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Context env = (Context) new InitialContext().lookup("java:comp/env");
-            return DriverManager.getConnection(env.lookup("database-url").toString(),
-                    env.lookup("database-user").toString(),
-                    env.lookup("database-password").toString());
+            Properties properties = new Properties();
+            propertiesStream = getClass().getClassLoader().getResourceAsStream("database.properties");
+            if (propertiesStream != null) {
+                properties.load(propertiesStream);
+            }
+            return DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("user"), properties.getProperty("password"));
         } catch (SQLException e) {
             throw new DatabaseException("GetConnection - SQLException: " + e.getMessage());
         } catch (Exception e) {
             throw new Exception("ConnectionManager - GetConnection: " + e.getMessage());
+        } finally {
+            if (propertiesStream != null) {
+                propertiesStream.close();
+            }
         }
     }
 
@@ -64,14 +69,6 @@ public interface SqlManager {
                             break;
                         case "double":
                             stmt.setDouble(parameter.getKey(), Double.parseDouble(values.get(0)));
-                            break;
-                        case "date":
-                            stmt.setDate(
-                                    parameter.getKey(),
-                                    Date.valueOf(
-                                            convertDateToMysqlDate(values.get(0))
-                                    )
-                            );
                             break;
                     }
                 }
@@ -149,21 +146,5 @@ public interface SqlManager {
         } finally {
             cleanUp(stmt, rs, true);
         }
-    }
-
-    /**
-     * Because the dates go down one day when prepared into a statement???, a day has te be added before that
-     * @param date the date to convert in string format yyyy-mm-dd
-     * @return date string ready for statement prep
-     */
-    default String convertDateToMysqlDate(String date) {
-        String[] splt = date.split("-");
-        // turn dateString into local date and use plusDay one to add a single day
-        LocalDate localDate = LocalDate.of(
-                Integer.parseInt(splt[0]),
-                Integer.parseInt(splt[1]),
-                Integer.parseInt(splt[2]))
-                .plusDays(1);
-        return localDate.toString();
     }
 }
