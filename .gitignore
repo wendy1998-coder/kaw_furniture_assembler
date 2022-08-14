@@ -22,7 +22,6 @@
 build
 gradle
 out
-web.xml
 gradlew
 gradlew.bat
 .idea
