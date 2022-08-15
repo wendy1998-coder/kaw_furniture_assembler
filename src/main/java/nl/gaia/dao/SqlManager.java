@@ -124,14 +124,16 @@ public interface SqlManager {
         }
     }
 
-    default HashMap<String, List<String>> turnResultsetIntoHashmap(ResultSet rs, PreparedStatement stmt) throws DatabaseException {
+    default HashMap<String, List<String>> turnResultsetIntoHashmap(ResultSet rs,
+                                                                   PreparedStatement stmt)
+            throws DatabaseException {
         try {
             ResultSetMetaData metaData = rs.getMetaData();
             // set up the hashmap
             HashMap<String, List<String>> out = new HashMap<>();
 
             for (int i = 1; i <= metaData.getColumnCount(); i++) {
-                String columnName = metaData.getColumnName(i);
+                String columnName = metaData.getColumnLabel(i);
                 out.put(columnName, new ArrayList<>());
             }
 

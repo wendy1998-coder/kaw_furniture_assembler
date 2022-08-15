@@ -3,13 +3,14 @@ SELECT
     box.name AS furniture_set,
     Slot.name AS slot,
     piece.name,
+    piece.hasPictureAvailable as has_image,
     CONCAT_WS(
             "",
             Slot.filepath,
             box.filenamePrefix,
             piece.filenameAddition,
             Slot.filenameSuffix
-        ) AS Imagepath
+        ) AS image_path
 FROM
     `Furniture_piece` AS piece,
     Furniture_set AS box,
