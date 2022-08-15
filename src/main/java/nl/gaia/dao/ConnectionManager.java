@@ -43,11 +43,11 @@ public class ConnectionManager implements SqlManager {
      * @throws Exception if something goes wrong.
      */
     public HashMap<Integer, Furniture_piece> getPieces() throws Exception {
-        String sql = getViewSql();
         LocalDate now = LocalDate.now();
         LocalDate yesterday = now.minusDays(1);
         if (cachedPieces == null || lastCached == null
                 || lastCached.isBefore(yesterday) || lastCached.isEqual(yesterday)) {
+            String sql = getViewSql();
             HashMap<String, List<String>> result = executeQuery(sql, null);
             cachedPieces = convertSqlResultToPieces(result);
             lastCached = now;
