@@ -3,126 +3,66 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
 
 body {
-    background-color: #000;
+    background-color: #fff;
     margin: auto;
     overflow-y: visible;
-    font-family: "Open Sans", sans-serif;
-    color: #fff;
+    font-family: 'Mukta',serif;
+    color: #000;
     font-size: 14px!important;
 }
 
-a {
+.primary {
+    color: #565555;
+}
+
+.primary-bg {
+    background-color: #565555;
     color: white;
-    text-decoration: underline;
 }
 
-.red {
-    color: red;
+.primary-border {
+    border-color: #565555;
 }
 
-.green {
-    color: green;
+.secondary {
+    color: #f0f0f0;
 }
 
-.border-right {
-    border-right: 1px solid #fff;
+.secondary-bg {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.secondary-border {
+    border-color: #f0f0f0;
+}
+
+.thirtiary {
+    color: #dc9e23;
+}
+
+.thirtiary-bg {
+    background-color: #dc9e23;
+    color: black;
+}
+
+.thirtiary-border {
+    border-color: #dc9e23;
+}
+
+.quarternary {
+    color: #e14a31;
+}
+
+.quarternary-bg {
+    background-color: #e14a31;
+    color: white;
+}
+
+.quarternary-border {
+    border-color: #e14a31;
 }
 
 .hidden {
     display: none;
-}
-
-.submit {
-    color: black!important;
-}
-
-/*panels*/
-.panel-body {
-    background-color: black;
-}
-
-.panel-title {
-    color: black;
-}
-
-/*buttons*/
-.add-image {
-    height: calc(2.5rem + 2px);
-    border: 1px solid #fff;
-}
-
-.btn {
-    font-size: 1em!important;
-}
-
-.nav-tabs > li > a.active,
-.nav > li > a:hover {
-    background-color: #000;
-    color: #f9f9f9;
-    border: 1px #fff solid;
-}
-
-/*CSS menu*/
-#cssmenu {
-    max-height: 100px;
-    overflow-y: visible;
-    z-index: 1;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    line-height: 1;
-    background-color: #000;
-    display: inline-block;
-    zoom: 1;
-    font-size: 12px;
-}
-
-#cssmenu ul,
-#cssmenu ul li {
-    list-style: none;
-    background-color: #000;
-    margin: 0;
-    padding: 0;
-}
-
-#cssmenu ul {
-    position: relative;
-    z-index: 1000;
-    float: left;
-}
-#cssmenu ul li {
-    min-height: 1px;
-    vertical-align: middle;
-    position: relative;
-}
-#cssmenu ul li.hover,
-#cssmenu ul li:hover {
-    position: relative;
-    cursor: default;
-}
-
-#cssmenu:before {
-    content: '';
-    display: block;
-}
-#cssmenu:after {
-    content: '';
-    display: table;
-    clear: both;
-}
-
-#cssmenu a {
-    display: block;
-    padding: 15px 20px;
-    text-decoration: none;
-    color: #7C35B4;
-    font-weight: bold;
-    border-right: 1px solid #29ABE2;
-    border-bottom: 1px solid #29ABE2;
-}
-
-#cssmenu li:hover,
-#cssmenu .active {
-    border-right: 3px solid #29ABE2;
-    font-weight: bolder;
 }
