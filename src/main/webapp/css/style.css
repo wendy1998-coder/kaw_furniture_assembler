@@ -19,6 +19,7 @@
 .row {
     margin: 0;
 }
+
 body {
     background-color: #fff;
     margin: auto;
@@ -28,10 +29,17 @@ body {
     font-size: 14px!important;
 }
 
+#footerBar #footerMenu li:hover,
+#footerBar #footerMenu .active,
+#header li:hover,
+#header .active {
+    font-weight: bold;
+}
+
 #header {
     width: 100%;
     height: max-content;
-    padding: 10px 5px;
+    padding: 10px 0;
 }
 
 #header #title {
@@ -39,6 +47,42 @@ body {
     text-align: center;
     font-weight: bold;
 
+}
+
+#header #mobileMenu #mobileMenuTrigger {
+    text-align: center;
+}
+
+#header #mobileMenu #mobileMenuItems {
+    display: none;
+    width: 100%;
+    /*display: inline-flex;*/
+    border: 3px solid;
+    position: relative;
+    padding: 2px 0;
+    margin-bottom: -100%;
+    border-top-width: 0;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+#header #mobileMenu #mobileMenuItems > li {
+    border-bottom: 1px solid;
+    width: 100%;
+    text-align: center;
+    border-color: inherit;
+}
+
+#header #mobileMenu #mobileMenuItems > li:last-child {
+    border-bottom: 0;
+}
+
+#header #mobileMenu #mobileMenuItems > li > a {
+    text-decoration: none;
+    color: inherit;
 }
 
 #footerBar #copyright {
@@ -112,7 +156,7 @@ body {
 }
 
 .primary-border {
-    border-color: var(--primary);
+    border-color: var(--primary) !important;
 }
 
 .secondary {
@@ -125,7 +169,7 @@ body {
 }
 
 .secondary-border {
-    border-color: var(--secondary);
+    border-color: var(--secondary) !important;
 }
 
 .thirtiary {
@@ -138,7 +182,7 @@ body {
 }
 
 .thirtiary-border {
-    border-color: var(--thirtiary);
+    border-color: var(--thirtiary) !important;
 }
 
 .quarternary {
@@ -151,7 +195,7 @@ body {
 }
 
 .quarternary-border {
-    border-color: var(--quarternary);
+    border-color: var(--quarternary)!important;
 }
 
 .hidden {
@@ -169,5 +213,9 @@ body {
     #footerBar {
         display: flex;
         align-items: center;
+    }
+
+    #header {
+        padding: 10px 5px;
     }
 }

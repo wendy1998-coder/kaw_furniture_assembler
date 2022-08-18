@@ -18,16 +18,14 @@
     <div id="mobileMenuTrigger" class="primary-bg quarternary-border thirtiary menu">
         Unfold menu
     </div>
-    <div id="mobileMenuItems" class="primary-bg quarternary-border thirtiary">
-        <ul>
-            <li v-for="item in headerMenuItems">
-                <a v-if="item.page" :href="item.page" :class="{'active': item.active}">{{ item.name }}</a>
-                <a v-else-if="item.url" :href="item.url" :class="{'active': item.active}">{{ item.name }}</a>
-            </li>
-            <li v-for="item in footerMenuItems" v-if="item.addToTop">
-                <a v-if="item.page" :href="item.page" :class="{'active': item.active}">{{ item.name }}</a>
-                <a v-else-if="item.url" :href="item.url" :class="{'active': item.active}">{{ item.name }}</a>
-            </li>
-        </ul>
-    </div>
+    <ul id="mobileMenuItems" class="primary-bg quarternary-border thirtiary">
+        <li v-for="item in headerMenuItems">
+            <a v-if="item.page" :href="item.page" :class="{'active': item.active}">{{ item.name }}</a>
+            <a v-else-if="item.url" :href="item.url" :class="{'active': item.active}">{{ item.name }}</a>
+        </li>
+        <li v-for="item in footerMenuItems" v-if="item.addToTop">
+            <a v-if="item.page" :href="item.page" :class="{'active': item.active}">{{ item.name }}</a>
+            <a v-else-if="item.url" :href="item.url" :class="{'active': item.active}">{{ item.name }}</a>
+        </li>
+    </ul>
 </div>
