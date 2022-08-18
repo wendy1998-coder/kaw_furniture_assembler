@@ -10,38 +10,16 @@
 <html>
   <head>
     <jsp:include page="includes/head.jsp">
-      <jsp:param name="pageTitle" value="Bookkeeper" />
+      <jsp:param name="pageTitle" value="Kaw Furniture Assembler" />
     </jsp:include>
   </head>
-  <body>
+  <body id="vue">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-2 p-0" id="vue">
-        <jsp:include page="includes/menu.jsp" />
-      </div>
-      <!--content-->
-      <div class="col-10">
-        <jsp:include page="includes/error.jsp" />
-        <div class="row">
-          <div class="col-sm-7">
-            <jsp:include page="includes/overview/overview/overviewMain.jsp" />
-          </div>
-          <div class="col-sm-5">
-            <jsp:include page="includes/overview/periodic/periodicMain.jsp" />
-            <jsp:include page="includes/overview/snapshot/snapshotMain.jsp" />
-            <div>
-              <!--TODO: money accounts / calculations-->
-              <jsp:include page="includes/overview/calculations/calculationsMain.jsp" />
-            </div>
-          </div>
-        </div>
-      </div>
+      <jsp:include page="includes/header.jsp" />
     </div>
   </div>
   <jsp:include page="includes/footer.jsp" />
   <script src="js/vue/home.js"></script>
-  <script src="js/manageRequestForm.js"></script>
-  <script src="js/manage-periodic-transfers.js"></script>
-  <script src="js/datatables/datatableHome.js"></script>
   </body>
 </html>

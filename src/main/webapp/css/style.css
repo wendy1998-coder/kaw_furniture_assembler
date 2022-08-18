@@ -2,6 +2,20 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
 
+:root {
+    /*breakpoints*/
+    --sm: 360px;
+    --md: 834px;
+    --lg: 1200px;
+    --xl: 1440px;
+
+    /*colors*/
+    --primary: #565555;
+    --secondary: #f0f0f0;
+    --thirtiary: #dc9e23;
+    --quarternary: #e14a31;
+}
+
 body {
     background-color: #fff;
     margin: auto;
@@ -11,58 +25,78 @@ body {
     font-size: 14px!important;
 }
 
+#cssmenu {
+    display: none;
+}
+
+#footerBar {
+    display: none;
+}
+
 .primary {
-    color: #565555;
+    color: var(--primary);
 }
 
 .primary-bg {
-    background-color: #565555;
+    background-color: var(--primary);
     color: white;
 }
 
 .primary-border {
-    border-color: #565555;
+    border-color: var(--primary);
 }
 
 .secondary {
-    color: #f0f0f0;
+    color: var(--secondary);
 }
 
 .secondary-bg {
-    background-color: #f0f0f0;
+    background-color: var(--secondary);
     color: black;
 }
 
 .secondary-border {
-    border-color: #f0f0f0;
+    border-color: var(--secondary);
 }
 
 .thirtiary {
-    color: #dc9e23;
+    color: var(--thirtiary);
 }
 
 .thirtiary-bg {
-    background-color: #dc9e23;
+    background-color: var(--thirtiary);
     color: black;
 }
 
 .thirtiary-border {
-    border-color: #dc9e23;
+    border-color: var(--thirtiary);
 }
 
 .quarternary {
-    color: #e14a31;
+    color: var(--quarternary);
 }
 
 .quarternary-bg {
-    background-color: #e14a31;
+    background-color: var(--quarternary);
     color: white;
 }
 
 .quarternary-border {
-    border-color: #e14a31;
+    border-color: var(--quarternary);
 }
 
 .hidden {
     display: none;
+}
+
+@media all and (min-width: var(--md)) {
+    #mobileMenu {
+        display: none;
+    }
+    #cssmenu {
+        display: block;
+    }
+    #footerBar {
+        display: block;
+    }
 }
