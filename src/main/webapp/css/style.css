@@ -30,7 +30,8 @@ body {
 
 #header {
     width: 100%;
-    height: auto;
+    height: max-content;
+    padding: 10px 5px;
 }
 
 #header #title {
@@ -40,11 +41,8 @@ body {
 
 }
 
-#copyright {
+#footerBar #copyright {
     text-align: right;
-    position: absolute;
-    right: 0;
-    bottom: 0;
 }
 
 .menu a {
@@ -62,13 +60,18 @@ body {
     border-left: 2px solid;
     border-right: 2px solid;
     border-color: inherit;
-    list-style: none;
-    display: block;
-    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
 }
 
 .menu > ul.menuItems {
     display: flex;
+    padding: 0;
+    margin: 0;
+    border-color: inherit;
 }
 
 .menu > ul.menuItems > li:first-child {
@@ -88,10 +91,10 @@ body {
 #footerBar {
     display: none;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: max-content;
     padding: 5px;
 }
 
@@ -155,7 +158,8 @@ body {
     display: none;
 }
 
-@media all and (min-width: 10px) {
+/*medium breakpoint*/
+@media all and (min-width: 400px) {
     #mobileMenu {
         display: none!important;
     }
@@ -163,6 +167,7 @@ body {
         display: block!important;
     }
     #footerBar {
-        display: block!important;
+        display: flex;
+        align-items: center;
     }
 }
