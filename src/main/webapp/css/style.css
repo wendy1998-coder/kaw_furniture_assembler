@@ -16,6 +16,9 @@
     --quarternary: #e14a31;
 }
 
+.row {
+    margin: 0;
+}
 body {
     background-color: #fff;
     margin: auto;
@@ -25,12 +28,75 @@ body {
     font-size: 14px!important;
 }
 
+#header {
+    width: 100%;
+    height: auto;
+}
+
+#header #title {
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+#copyright {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu {
+    border-radius: 45px;
+    border-style: solid;
+    border-width: 4px;
+}
+
+.menu > ul.menuItems > li {
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-color: inherit;
+    list-style: none;
+    display: block;
+    padding: 15px 20px;
+}
+
+.menu > ul.menuItems {
+    display: flex;
+}
+
+.menu > ul.menuItems > li:first-child {
+    border-left: 0;
+}
+
+.menu > ul.menuItems > li:last-child {
+    border-right: 0;
+}
+
+
 #cssmenu {
     display: none;
+    width: 100%;
 }
 
 #footerBar {
     display: none;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+}
+
+#footerBar #footerMenu {
+    display: inline-block;
 }
 
 .primary {
@@ -89,14 +155,14 @@ body {
     display: none;
 }
 
-@media all and (min-width: var(--md)) {
+@media all and (min-width: 10px) {
     #mobileMenu {
-        display: none;
+        display: none!important;
     }
     #cssmenu {
-        display: block;
+        display: block!important;
     }
     #footerBar {
-        display: block;
+        display: block!important;
     }
 }

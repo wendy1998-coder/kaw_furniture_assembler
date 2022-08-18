@@ -10,16 +10,14 @@
 <html>
   <head>
     <jsp:include page="includes/head.jsp">
-      <jsp:param name="pageTitle" value="Kaw Furniture Assembler" />
+      <jsp:param name="pageTitle" value="KaW Furniture Assembler" />
     </jsp:include>
   </head>
-  <body id="vue">
-  <div class="container-fluid">
-    <div class="row">
+  <body>
+    <div id="vue">
       <jsp:include page="includes/header.jsp" />
+      <jsp:include page="includes/footer.jsp" />
     </div>
-  </div>
-  <jsp:include page="includes/footer.jsp" />
-  <script src="js/vue/home.js"></script>
+    <script src="js/vue/home.js"></script>
   </body>
 </html>

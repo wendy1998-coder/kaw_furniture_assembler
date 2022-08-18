@@ -7,13 +7,20 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div id="footerBar" class="secondary-bg">
-    <div id="footerMenu" class="primary-bg quarternary-border thirtiary">
-        <ul>
-            <li v-for="item in footerMenuItems" class="quarternary-border">
-                <a v-if="item.page" :href="item.page" :class="{'active': item.active}">{{ item.name }}</a>
-                <a v-else-if="item.url" :href="item.url" :class="{'active': item.active}">{{ item.name }}</a>
-            </li>
-        </ul>
+    <div class="row">
+        <div class="col-10">
+            <div id="footerMenu" class="menu primary-bg quarternary-border thirtiary">
+                <ul class="menuItems">
+                    <li v-for="item in footerMenuItems" class="quarternary-border">
+                        <a v-if="item.page" :href="item.page" :class="{'active': item.active}">{{ item.name }}</a>
+                        <a v-else-if="item.url" :href="item.url" :class="{'active': item.active}">{{ item.name }}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-2" id="copyright">
+            © 2022 Gaia
+        </div>
     </div>
 </div>
 
