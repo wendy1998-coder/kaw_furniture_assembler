@@ -211,7 +211,7 @@ body {
 }
 
 /*medium breakpoint*/
-@media all and (min-width: 500px) {
+@media all and (min-width: 650px) {
     #mobileMenu {
         display: none!important;
     }
