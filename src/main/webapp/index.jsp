@@ -17,7 +17,7 @@
     <div id="vue">
       <jsp:include page="includes/header.jsp" />
       <div class="container-fluid" id="content">
-        <img src="blob:https://mega.nz/9d6d4908-c850-4f0a-b9f8-019baed53d25"  alt=""/>
+        <img src="https://drive.google.com/file/d/1bPY8opxDzD0Tz67k_zd-W5T-LOcfIrR2/view?usp=sharing"  alt=""/>
       </div>
       <jsp:include page="includes/footer.jsp" />
     </div>
