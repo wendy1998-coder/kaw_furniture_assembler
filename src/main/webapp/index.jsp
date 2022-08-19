@@ -17,7 +17,7 @@
     <div id="vue">
       <jsp:include page="includes/header.jsp" />
       <div class="container-fluid" id="content">
-
+        <img src="https://app.degoo.com/share/7P3OwWgJQ_Neawl_7tFbWg?_branch_match_id=1050673780589239875&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT87JL03RS0lNz8%2FXS87P1S%2FOSCxK1TcPMPYvD0%2F3Coz3S00sz4k3L3FLCk8HAJnpPMQ0AAAA&ID=18285120636" />
       </div>
       <jsp:include page="includes/footer.jsp" />
     </div>
