@@ -143,6 +143,7 @@ body {
     width: 100%;
     height: max-content;
     padding: 5px;
+    align-items: center;
 }
 
 #footerBar #footerMenu {
@@ -219,7 +220,6 @@ body {
     }
     #footerBar {
         display: flex;
-        align-items: center;
     }
 
     #header {
