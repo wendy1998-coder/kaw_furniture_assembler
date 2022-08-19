@@ -1,12 +1,10 @@
 package nl.gaia.pojo;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.List;
 
-@Getter
+
 public class Furniture_piece {
     private static final HashMap<String, String> fieldNameSqlNameMapping = new HashMap<>(6);
     static {
@@ -47,4 +45,29 @@ public class Furniture_piece {
 
         return out;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Boolean getHasImage() {
+        return hasImage;
+    }
+
+    public String getSlot() {
+        return slot;
+    }
+
+    public String getSet() {
+        return set;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
 }
