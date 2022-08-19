@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div id="footerBar" class="row secondary-bg">
-    <div class="col-10">
+    <div class="col-9">
         <div id="footerMenu" class="menu primary-bg quarternary-border thirtiary">
             <ul class="menuItems">
                 <li v-for="item in footerMenuItems" class="quarternary-border">
@@ -17,12 +17,7 @@
             </ul>
         </div>
     </div>
-    <div class="col-2" id="copyright">
+    <div class="col-3" id="copyright">
         © 2022 Gaia
     </div>
 </div>
-
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="js/vue/vue.js" type="text/javascript"></script>

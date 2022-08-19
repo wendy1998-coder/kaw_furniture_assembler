@@ -56,7 +56,6 @@ body {
 #header #mobileMenu #mobileMenuItems {
     display: none;
     width: 100%;
-    /*display: inline-flex;*/
     border: 3px solid;
     position: relative;
     padding: 2px 0;
@@ -67,6 +66,10 @@ body {
     justify-content: center;
     align-items: center;
     list-style: none;
+}
+
+#header #mobileMenu #mobileMenuItems.visible {
+    display: inline-flex;
 }
 
 #header #mobileMenu #mobileMenuItems > li {
@@ -144,6 +147,10 @@ body {
 
 #footerBar #footerMenu {
     display: inline-block;
+}
+
+#footerBar #footerMenu.menu > ul.menuItems > li  {
+    width: 150px;
 }
 
 .primary {
