@@ -11,7 +11,7 @@ if (document.readyState) {
                 {
                     name: 'Catalog',
                     page: 'catalog',
-                    active: false
+                    active: true
                 }
             ],
             footerMenuItems: [

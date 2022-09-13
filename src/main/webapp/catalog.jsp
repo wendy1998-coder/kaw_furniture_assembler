@@ -17,7 +17,13 @@
     <div id="vue">
       <jsp:include page="includes/header.jsp" />
       <div class="container-fluid" id="content">
-
+        <c:if test="${requestScope.pieces != null}">
+          <c:forEach var="furniture_piece" items="${requestScope.pieces}">
+            <c:if test="${furniture_piece.getCatalogUrl() != null}">
+              <img src="${furniture_piece.getCatalogUrl()}" alt="${furniture_piece.name}">
+            </c:if>
+          </c:forEach>
+        </c:if>
       </div>
       <jsp:include page="includes/footer.jsp" />
     </div>
@@ -26,6 +32,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="js/vue/vue.js" type="text/javascript"></script>
     <script src="js/menuToggle.js"></script>
-    <script src="js/vue/home.js"></script>
+    <script src="js/vue/catalog.js"></script>
   </body>
 </html>
