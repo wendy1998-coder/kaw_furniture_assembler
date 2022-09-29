@@ -17,7 +17,7 @@
     <div id="vue">
       <jsp:include page="includes/header.jsp" />
       <div class="container-fluid" id="content">
-
+        <img src="https://kfa.imgix.net/Furniture/Armor/viskard_temple.png" alt="viskard temple armor"/>
       </div>
       <jsp:include page="includes/footer.jsp" />
     </div>
