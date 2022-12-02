@@ -1,7 +1,7 @@
 package nl.gaia.dao;
 
 import com.beust.jcommander.Strings;
-import nl.gaia.pojo.Furniture_piece;
+import nl.gaia.pojo.FurniturePiece;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,14 +14,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static nl.gaia.pojo.Furniture_piece.convertSqlResultToPieces;
-import static nl.gaia.pojo.Furniture_piece.fieldNameSqlNameMapping;
+import static nl.gaia.pojo.FurniturePiece.convertSqlResultToPieces;
+import static nl.gaia.pojo.FurniturePiece.fieldNameSqlNameMapping;
 
 public class ConnectionManager implements SqlManager {
     private static ConnectionManager singletonInstance = null;
     private String viewSql = null;
     private LocalDate lastCached = null;
-    private HashMap<Integer, Furniture_piece> cachedPieces = new HashMap<>();
+    private HashMap<Integer, FurniturePiece> cachedPieces = new HashMap<>();
 
     /**
      * Private constructor so only singletonInstance can be used.
@@ -45,7 +45,7 @@ public class ConnectionManager implements SqlManager {
      * @return the cached pieces
      * @throws Exception if something goes wrong.
      */
-    public HashMap<Integer, Furniture_piece> getAllPieces() throws Exception {
+    public HashMap<Integer, FurniturePiece> getAllPieces() throws Exception {
         LocalDate now = LocalDate.now();
         LocalDate yesterday = now.minusDays(1);
         if (cachedPieces == null || lastCached == null

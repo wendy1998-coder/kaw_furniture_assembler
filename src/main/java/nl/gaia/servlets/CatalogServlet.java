@@ -12,11 +12,13 @@ import java.io.IOException;
 
 @WebServlet(name = "CatalogServlet", urlPatterns = "/catalog")
 public class CatalogServlet extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher view = request.getRequestDispatcher("catalog.jsp");
         view.forward(request, response);
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher view = request.getRequestDispatcher("catalog.jsp");
         CatalogController catalogController = new CatalogController(request, response);

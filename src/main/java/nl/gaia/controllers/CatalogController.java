@@ -2,7 +2,7 @@ package nl.gaia.controllers;
 
 import nl.gaia.dao.ConnectionManager;
 import nl.gaia.dao.DatabaseException;
-import nl.gaia.pojo.Furniture_piece;
+import nl.gaia.pojo.FurniturePiece;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,8 +20,8 @@ public class CatalogController extends AbstractController {
 
     public void getFilteredPieces(String slot, String name, String set) throws DatabaseException {
         ConnectionManager cm = ConnectionManager.defaultManager();
-        List<Furniture_piece> filtered = new ArrayList<>();
-        HashMap<Integer, Furniture_piece> allPieces = null;
+        List<FurniturePiece> filtered = new ArrayList<>();
+        HashMap<Integer, FurniturePiece> allPieces = null;
         try {
             int[] filteredIds = cm.getFilteredPieces(slot, name, set);
             allPieces = cm.getAllPieces();
@@ -34,7 +34,7 @@ public class CatalogController extends AbstractController {
         } catch (Exception e) {
             if (allPieces != null) {
                 request.setAttribute("pieces", Arrays.stream(allPieces.values()
-                        .toArray(new Furniture_piece[]{})).collect(Collectors.toList())
+                        .toArray(new FurniturePiece[]{})).collect(Collectors.toList())
                 );
                 throw new DatabaseException("GetFilteredPieces: " + e.getMessage() + " showing unfiltered", e);
             }
